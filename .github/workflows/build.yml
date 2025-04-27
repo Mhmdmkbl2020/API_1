@@ -11,7 +11,7 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
-      - run: dotnet build ./API/API.csproj
+      - run: dotnet build ./API/API.csproj # تأكد من صحة المسار
 
   build-android:
     runs-on: ubuntu-latest
@@ -20,5 +20,6 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
+          distribution: 'temurin'
           java-version: '11'
       - run: cd MobileApp && ./gradlew build
